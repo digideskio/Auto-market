@@ -1,0 +1,22 @@
+name = Grayscale
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/style.css
+
+regions[alerts] = Alerts
+regions[featured] = Features Articles
+regions[socialnetworks] = Social Networks
+regions[page_bottom] = Page Bottom
+regions[page_top] = Page Top
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[highlighted] = Highlighted
+
+//scripts[] = js/jcarousel.js
+
+settings[font_family] = 'ff-sss'
+settings[font-size] = 'fs-12'
+
