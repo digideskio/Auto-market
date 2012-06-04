@@ -103,10 +103,6 @@
 
       <?php print render($page['header']); ?>
 
-<div id="alerts">
-<?php print render($page['alers']; ?>
-<div> <!-- /alerts -->
-
     </div></div> <!-- /.section, /#header -->
 
     <?php if ($main_menu || $secondary_menu): ?>
@@ -124,7 +120,14 @@
 
     <div id="main-wrapper"><div id="main" class="clearfix">
 
-      <div id="content" class="column"><div class="section">
+			<div id="content" class="column"><div class="section">
+
+				<?php
+				if ($is_front): ?><div id="welcome message">
+					<?php print "Welcome to my site"; ?></div>
+				<?php endif; ?>
+
+
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
