@@ -113,3 +113,14 @@ color: #fff;
 color: #fff;
 }
 
+.breadcrumb {
+margin-top:10px;
+clear:both;
+height: 15px;
+background-color: #fff;
+width: 960px;
+margin-right: auto;
+margin-left: auto;
+}
+
+
