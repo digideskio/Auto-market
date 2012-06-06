@@ -1,0 +1,21 @@
+<?php
+/**
+* @file
+* Implements various blocks to improve pending content workflow.
+*/
+
+/**
+* Implements approval_block_info().
+*/
+
+function approval_block_info() {
+$blocks['pending_comments'] = array(
+'info' => t('Pending Comments'),
+'status' => TRUE,
+'region' => 'sidebar_first',
+'weight' => 0,
+'visibility' => 1,
+);
+
+return $blocks;
+}
