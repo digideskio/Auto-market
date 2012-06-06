@@ -1,5 +1,5 @@
 name = as_Approval
-description = Blocks for facilitating pending content workflow.
+description = Blocks for showing top and last offers.
 package = Pro Drupal Development
 core = 7.x
 version = VERSION
