@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+ <style>
+   .thumb img  {
+    border: 1px;
+    padding: 1px; 
+    background: #666; /* Цвет фона */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+   }
+   
+   .banner1 {
+    width: 480px;
+    text-align: center;
+    float: left; 
+    display: inline;
+   }
+
+  .banner2 {
+    width: 480px;
+    text-align: center;
+  } 
+   
+   
+  </style>
+
+</head>
+<body>
+<div class="thumb">
+<div class="banner1">
+  <a href="http://google.com"><img src="images/google.png" width=141 height=63></a>
+</div>
+<div class="banner2">
+<a href="http://yahoo.com"><img src="images/yahoo.png" width=141 height=63></a>
+</div>
+</div>
+</body>
+</html>

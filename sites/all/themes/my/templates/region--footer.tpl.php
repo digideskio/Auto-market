@@ -26,7 +26,6 @@
  * @see template_process()
  */
 ?>
-<a href="http://google.com"><img src="images/google.png"></a>
 
 <?php if ($content): ?>
   <footer id="footer" class="<?php print $classes; ?>">

@@ -224,6 +224,34 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 /*
+ * Banners google and yahoo
+*/
+
+#thumb img  {
+	border: 1px;
+	padding: 1px; 
+	background: #666; 
+	margin-right: 10px; 
+	margin-bottom: 10px; 
+	width: 141px;
+ 	height: 63px;
+ }
+
+ .banner1 {
+	 width: 480px;
+	 text-align: center;
+	 float: left; 
+
+ }
+
+ .banner2 {
+	 width: 480px;
+	 text-align: center;
+	 display: inline;
+} 
+
+
+/*
  * Page bottom
  */
 
