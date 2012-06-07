@@ -24,11 +24,6 @@ function as_approval_block_info() {
 			'weight'	=> 0,
 			'visibility' => 1,
 		);
-	$blocks['pending_users'] = array(
-		'info'	=> t('Pending Users'),
-			'status'=> FALSE,
-			'weight'=> 0,
-		);
 
 	return $blocks;
 }
@@ -39,7 +34,7 @@ function as_approval_block_info() {
 function as_approval_block_configure($delta) {
 	$form = array();
 	switch($delta) {
-	case 'Last offers':
+	case 'last_offers':
 		$form['last_offers_count'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Configure Number of Offers to Display'),
@@ -50,7 +45,7 @@ function as_approval_block_configure($delta) {
 		);
 		break;
 
-	case 'Top offers':
+	case 'top_offers':
 		$form['top_offers_count'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Configure Number of top offfers to Display'),
@@ -70,7 +65,6 @@ function as_approval_block_configure($delta) {
  * Implements hook_block_save().
  */
 function as_approval_block_save($delta = '', $edit = array()) {
-
 	switch($delta) {
 	case 'last_offers':
 		variable_set('last_offers_count', (int)$edit['last_offers_count']);
@@ -85,13 +79,13 @@ function as_approval_block_save($delta = '', $edit = array()) {
 function as_approval_block_view($delta = '') {
 	
 	switch ($delta) {
-	case 'last_offerss':
+	case 'last_offers':
 		$block['subject'] = t('Last offers');
 		$block['content'] = as_approval_block_contents($delta);
 		return $block;
 		break;
 	case 'top_offers':
-		$block['subject'] = t('Unpublished Nodes');
+		$block['subject'] = t('Top offers');
 		$block['content'] = as_approval_block_contents($delta);
 		return $block;
 		break;
@@ -114,11 +108,13 @@ function as_approval_block_contents($delta) {
 			foreach ($result as $row) {
 				$items[] = l($row->subject, 'comment/' . $row->cid . '/edit');
 			}
+//print $nbr_comments; exit;
 			return array('#markup' => theme('item_list', array('items' => $items)));
 		break;
 
 	case 'top_offers':
 			$nbr_nodes = variable_get('top_offers_count', 5);
+//print "1113"; exit;
 			$result = db_query_range('SELECT nid, title FROM {node} WHERE
 				status = 1', 0, $nbr_nodes);
 			$items = array();
