@@ -101,25 +101,23 @@ function as_approval_block_contents($delta) {
 	switch ($delta) {
 	
 	case 'last_offers':
-			$nbr_comments = variable_get('last_offers_count');
-			$result = db_query("SELECT cid, subject FROM {comment} WHERE status = 1 limit
-			$nbr_comments");
-			$items = array();
-			foreach ($result as $row) {
-				$items[] = l($row->subject, 'comment/' . $row->cid . '/edit');
-			}
-//print $nbr_comments; exit;
-			return array('#markup' => theme('item_list', array('items' => $items)));
-		break;
-
-	case 'top_offers':
 			$nbr_nodes = variable_get('top_offers_count', 5);
-//print "1113"; exit;
 			$result = db_query_range('SELECT nid, title FROM {node} WHERE
 				status = 1', 0, $nbr_nodes);
 			$items = array();
 			foreach ($result as $row) {
-				$items[] = l($row->title, 'node/'.$row->nid.'/edit');
+				$items[] = l($row->title, 'node/'.$row->nid);
+			return array('#markup' => theme('item_list', array('items' => $items)));
+			}
+				break;
+
+	case 'top_offers':
+			$nbr_nodes = variable_get('top_offers_count', 5);
+			$result = db_query_range('SELECT nid, title FROM {node} WHERE
+				status = 1', 0, $nbr_nodes);
+			$items = array();
+			foreach ($result as $row) {
+				$items[] = l($row->title, 'node/'.$row->nid);
 			return array('#markup' => theme('item_list', array('items' => $items)));
 			}
 			break;
