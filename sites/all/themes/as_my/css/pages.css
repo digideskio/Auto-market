@@ -15,7 +15,8 @@
 body {
   margin: 0;
   padding: 0;
-	background: #F4F4F2;
+/*background: #F4F4F2;*/
+  background: #FFFFFF;
 }
 
 #page {
@@ -96,7 +97,7 @@ body {
  */
 
 #main {  
-    background: url(../images/bg-main.gif) repeat-x;
+    background: #F4F4F2 url(../images/bg-main.gif) repeat-x;
 }
 
 /*
