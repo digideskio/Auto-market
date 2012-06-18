@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Use this module to learn about Drupal's menu system.
+ * Implementation of hook_menu().
+ */
+function menufun_menu(){
+    $items['menufun'] = array(
+        'title' => 'Greeting',
+        'page callback' => 'menufun_hello',
+        'page arguments' => array('Lena','Polovnikova'),
+        'access callback' => 'user_access',
+        'access_arguments' => array ('receive_greeting'),
+        'type' => MENU_NORMAL_ITEM,
+        'weight' => -1,
+    );
+return $items;
+}
+
+function menufun_hello($first_name='', $last_name=''){
+    drupal_set_title($title = "Omsk");
+    return t('Hello, @first_name @last_name from @from_first_name @from_last_name', array('@first_name'=>$first_name, '@last_name'=>$last_name));
+}
+
+/**
+ ** Implementation of hook_permission()
+ */
+function menufun_permission() {
+    return array( 'receive greeting' => array('title' => t('Receive a greeting'),
+        'description' => t('Allow users receive a greeting message'),
+    ),
+    );
+}
